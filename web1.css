@@ -1,0 +1,35 @@
+.sec
+{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color:burlywood;
+   
+    
+}
+body{
+    margin: 0;
+
+}
+
+h1{
+    font-family: cursive;
+    color:blue;
+    
+}
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+button{
+  
+    color:darkblue;
+
+}
