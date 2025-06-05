@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="style.css">
+<title>Book Flip Portfolio</title>
+</head>
+<body>
+  <div class="container">
+    <div class="book" id="book">
+      <!-- Cover page -->
+      <div class="page cover">
+        <div>
+          <h1>Hello, I am JAYSRI MOPADA</h1>
+          <div class="menu">
+            <button onclick="goToPage(1)">More About Me</button>
+            <button onclick="goToPage(2)">Projects</button>
+            <button onclick="goToPage(3)">Skills and Languages</button>
+            <button onclick="goToPage(4)">Contact Me</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Me page -->
+      <div class="page backside" id="page-1">
+        <h2>About Me</h2>
+        <p> I’m Jaysri, a 2nd-year Information Technology student passionate about coding and exploring AI and machine learning. I enjoy building projects like chatbots and computer vision applications, and I’m constantly learning new technologies like Python, OpenCV, and web development. Outside of coding, I love playing badminton, chess, and watching sci-fi and Marvel movies.</p>
+        <h2>Education</h2>
+        <p>B-Tech | 2023-Currently Pursuing | MVGR College of Engineering</p>
+        <p>Intermediate | 2021-2023 | Sri Chaitanya Junior College</p>
+        <p>10th | 2021 | Sri Chaitanya Techno School</p>
+    
+        <button class="back-btn" onclick="goToPage(0)">Back to Cover</button>
+      </div>
+
+      <!-- Projects page -->
+      <div class="page backside" id="page-2">
+        <h2>Projects</h2>    
+        <h3>ChatGPT Clone</h3>
+        <p>A custom chatbot built using LLMs via LLaMA, LangChain, and Streamlit</p>
+        <h3>Lens App (like Google Lens)</h3>
+        <p>Developed an app to detect and recognize objects/images from the camera or gallery</p>
+        <h3>Poem Writer using AI</h3>
+        <p>Used LLMs and natural language generation (NLG) features</p>
+        <h3>Parking Slot Detection using OpenCV</h3>
+        <p>Implemented image preprocessing, rectangle overlays, and thresholding using OpenCV in Python</p>
+        <button class="back-btn" onclick="goToPage(0)">Back to Cover</button>
+      </div>
+
+      <!-- Skills page -->
+      <div class="page backside" id="page-3">
+        <h2>Skills and Languages</h2>
+        <h3>My Technical Skills</h3>
+       <h4> Programming Languages:</h4>
+       <p>C</p>
+       <p>C++</p>
+       <p>Python</p>
+       <h4>Front-End</h4>
+       <p>HTML</p>
+       <p>CSS</p>
+       <p>Js</p>
+       <h4>Database</h4>
+       <p>MySQL</p>
+       <h4>Platforms & Tools:</h4>
+       <p>Salesforce (Trailhead modules in progress)</p>
+        <button class="back-btn" onclick="goToPage(0)">Back to Cover</button>
+      </div>
+
+      <!-- Contact page -->
+      <div class="page backside" id="page-4">
+        <h2>Contact Me</h2>
+        <p>📧 Email: <a href="mailto:jayasrimopada@gmail.com">jayasrimopada@gmail.com</a></p>
+        <p>📱 Phone: <a href="tel:+918297890446">+91 82978 90446</a></p>
+        <p>🌐 LinkedIn:<a href="https://www.linkedin.com/in/jayasri-mopada-371849293" target="_blank">linkedin.com/in/jayasri-mopada</a></p>
+        <p>💻 GitHub: <a href="https://github.com/Jayasi-sec" target="_blank">github.com/Jayasi-sec</a></p>
+        <button class="back-btn" onclick="goToPage(0)">Back to Cover</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const book = document.getElementById('book');
+  const backsidePages = document.querySelectorAll('.page.backside');
+
+  function goToPage(pageNumber) {
+    if (pageNumber === 0) {
+      // Show cover
+      book.style.transform = 'rotateY(0deg)';
+      backsidePages.forEach(p => p.classList.remove('active'));
+    } else {
+      // Show backside and only selected page
+      book.style.transform = 'rotateY(180deg)';
+      backsidePages.forEach(p => {
+        if (p.id === 'page-' + pageNumber) {
+          p.classList.add('active');
+        } else {
+          p.classList.remove('active');
+        }
+      });
+    }
+  }
+</script>
+</body>
+</html>

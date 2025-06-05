@@ -1,0 +1,99 @@
+ body {
+    margin: 0;
+    background: #f0f0f0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    perspective: 1500px;
+  }
+  h1{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:larger;
+  }
+  .container {
+    width: 600px;
+    height: 500px;
+    position: relative;
+    perspective: 1500px;
+  }
+  .book {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    background: white;
+  }
+  .page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    overflow-y: auto;
+  }
+  /* Cover page */
+  .page.cover {
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 5;
+    transform: rotateY(0deg);
+  }
+  .menu {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .menu button {
+    background: #fff;
+    border: 2px solid #4b79a1;
+    color: #4b79a1;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .menu button:hover {
+    background: #4b79a1;
+    color: white;
+  }
+  
+  /* Backside pages */
+  .page.backside {
+    background: white;
+    color: #333;
+    padding-top: 40px;
+    transform: rotateY(180deg);
+    display: none; /* hide by default */
+  }
+  .page.backside.active {
+    display: block; /* show only active page */
+  }
+  button.back-btn {
+    margin-top: 20px;
+    background: #4b79a1;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button.back-btn:hover {
+    background: #283e51;
+  }
